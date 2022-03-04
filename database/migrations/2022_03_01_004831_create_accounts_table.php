@@ -11,10 +11,13 @@ class CreateAccountsTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
+            //creamos un campo que si no se indica se colocara como cero el valor de balance
+            $table->integer('balance')->default(0);
             $table->timestamps();
         });
     }
